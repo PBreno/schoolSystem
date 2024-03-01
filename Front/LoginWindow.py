@@ -1,3 +1,4 @@
+import sys
 import tkinter as tk
 from tkinter import ttk, messagebox
 
@@ -13,6 +14,7 @@ class LoginWindow():
         self.root.title("Principal")
         self.root.geometry("350x250")
         self.root.resizable(True, True)
+        self.checkWindows = None
 
     #Username and password validation
     def validationForm(self, username, password):
@@ -28,13 +30,10 @@ class LoginWindow():
 
 
     def enrollNewUser(self):
-        print('Entrou no enroll')
-        #messagebox.askyesnocancel("Enroll User", "Do you really want to enroll user?")
-        enrollUser_window = EnrollUserWindow()
         self.root.destroy()
-        enrollUser_window.enrollUser()
-
-
+        enrollUser_window = EnrollUserWindow()
+        tk.Toplevel(enrollUser_window.enrollUser())
+        sys.exit()
 
     #Login window's interface
     def login(self):
@@ -58,7 +57,7 @@ class LoginWindow():
         passwordLabel.place(x=10, y=100)
 
         #Password input Field
-        passwordEntry = ttk.Entry()
+        passwordEntry = ttk.Entry(validate="focusout", show="*")
         passwordEntry.place(x=70, y=100)
 
         enrollLabel = ttk.Label(self.root, text="or")
@@ -66,10 +65,9 @@ class LoginWindow():
 
         loginButton = ttk.Button(self.root, text="Login")
         loginButton.place(x=70, y=140)
-        loginButton.bind("<Button-1>", lambda event: self.validationForm(usernameEntry.get(), passwordEntry.get()))
 
         enrollButton = ttk.Button(self.root, text="Enroll")
         enrollButton.place(x=180, y=140)
-        enrollButton.bind("<Button-1>", lambda event: self.enrollNewUser())
+        enrollButton.bind('<Button-1>', lambda event: self.enrollNewUser())
 
         self.root.mainloop()
