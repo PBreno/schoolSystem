@@ -1,8 +1,9 @@
 import sys
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import messagebox
 
 from Front.EnrollUserWindow import EnrollUserWindow
+from Front.PrincipalWindow import PrincipalWindow
 
 
 #Login Class
@@ -17,14 +18,16 @@ class LoginWindow():
         self.checkWindows = None
 
     #Username and password validation
-    def validationForm(self, username, password):
+    def validationForm(self, username: str, password: str):
 
         try:
-            if username == "" or password == "" :
+            if username == "" or password == "":
                 messagebox.showwarning("Username or password is empty",
                                        "Please enter your username and password")
             else:
-                messagebox.showinfo("Success", "Login Successful")
+                #messagebox.showinfo("Success", "Login Successful")
+                self.root.destroy()
+                PrincipalWindow().principalWindow()
         except:
             messagebox.showerror("Error", "Please enter your username and password")
 
@@ -38,35 +41,36 @@ class LoginWindow():
     #Login window's interface
     def login(self):
 
-        labelFrame = ttk.LabelFrame(self.root, text="Login")
+        labelFrame = tk.LabelFrame(self.root, text="Login")
         labelFrame.pack(fill="both", expand=True, padx=5, pady=5)
 
-        titleLabel = ttk.Label(labelFrame, text="Sistema Escolar")
+        titleLabel = tk.Label(labelFrame, text="Sistema Escolar")
         titleLabel.place(x=200, y=10, anchor=tk.CENTER)
 
         #Username Label
-        usernameLabel = ttk.Label(self.root, text="Username")
+        usernameLabel = tk.Label(self.root, text="Username")
         usernameLabel.place(x=10, y=70)
 
         #Username input Field
-        usernameEntry = ttk.Entry()
+        usernameEntry = tk.Entry()
         usernameEntry.place(x=70, y=70)
 
         #Password Label
-        passwordLabel = ttk.Label( self.root, text="Password")
+        passwordLabel = tk.Label( self.root, text="Password")
         passwordLabel.place(x=10, y=100)
 
         #Password input Field
-        passwordEntry = ttk.Entry(validate="focusout", show="*")
+        passwordEntry = tk.Entry(validate="focusout", show="*")
         passwordEntry.place(x=70, y=100)
 
-        enrollLabel = ttk.Label(self.root, text="or")
+        enrollLabel = tk.Label(self.root, text="or")
         enrollLabel.place(x=155, y=140, anchor=tk.CENTER)
 
-        loginButton = ttk.Button(self.root, text="Login")
+        loginButton = tk.Button(self.root, text="Login")
         loginButton.place(x=70, y=140)
+        loginButton.bind("<Button-1>", lambda event: self.validationForm(usernameEntry.get(), passwordEntry.get()))
 
-        enrollButton = ttk.Button(self.root, text="Enroll")
+        enrollButton = tk.Button(self.root, text="Enroll")
         enrollButton.place(x=180, y=140)
         enrollButton.bind('<Button-1>', lambda event: self.enrollNewUser())
 

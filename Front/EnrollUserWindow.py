@@ -22,7 +22,7 @@ class EnrollUserWindow():
 
     def cancelEnroll(self):
 
-        msg = messagebox.askyesnocancel("Cancelar", "Deseja cancelar o cadastro de usuário?")
+        msg = messagebox.askyesno("Cancelar", "Deseja cancelar o cadastro de usuário?")
 
         if msg:
             print("Cancelling")
@@ -31,6 +31,8 @@ class EnrollUserWindow():
             login_window = LoginWindow()
 
             tk.Toplevel(login_window.login())
+
+            print(sys.exc_info())
             sys.exit()
 
 
