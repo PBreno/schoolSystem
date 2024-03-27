@@ -5,7 +5,7 @@ class PrincipalWindow():
     def __init__(self):
         super().__init__()
         self.root = tk.Tk()
-        self.root.title("Sistema Escolar")
+        self.root.title("System Escolar")
         self.root.geometry("1150x650")
         self.root.resizable(True, True)
         ##self.root.attributes("-fullscreen", True)
@@ -31,7 +31,7 @@ class PrincipalWindow():
         ferramentas.add_command(label="Backup")
         ferramentas.add_command(label="Replicador")
 
-        menu.add_cascade(label="Sistema", menu=sistema)
+        menu.add_cascade(label="System", menu=sistema)
         menu.add_cascade(label="Cadastro", menu=cadastro)
         menu.add_cascade(label="Processos", menu=processos)
         menu.add_cascade(label="Ferramentas", menu=ferramentas)

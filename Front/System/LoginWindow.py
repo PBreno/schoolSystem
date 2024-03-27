@@ -2,7 +2,7 @@ import sys
 import tkinter as tk
 from tkinter import messagebox
 
-from Front.EnrollUserWindow import EnrollUserWindow
+from Front.System.EnrollUserWindow import EnrollUserWindow
 from Front.PrincipalWindow import PrincipalWindow
 
 
@@ -44,7 +44,7 @@ class LoginWindow():
         labelFrame = tk.LabelFrame(self.root, text="Login")
         labelFrame.pack(fill="both", expand=True, padx=5, pady=5)
 
-        titleLabel = tk.Label(labelFrame, text="Sistema Escolar")
+        titleLabel = tk.Label(labelFrame, text="System Escolar")
         titleLabel.place(x=200, y=10, anchor=tk.CENTER)
 
         #Username Label
@@ -70,7 +70,7 @@ class LoginWindow():
         loginButton.place(x=70, y=140)
         loginButton.bind("<Button-1>", lambda event: self.validationForm(usernameEntry.get(), passwordEntry.get()))
 
-        enrollButton = tk.Button(self.root, text="Enroll")
+        enrollButton = tk.Button(self.root, text="enroll")
         enrollButton.place(x=180, y=140)
         enrollButton.bind('<Button-1>', lambda event: self.enrollNewUser())
 

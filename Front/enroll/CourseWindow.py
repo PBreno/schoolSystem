@@ -33,7 +33,7 @@ class CourseWindow:
         courseEntry = tk.Entry()
         courseEntry.place(x=60, y= 60, width= 230, height= 25)
 
-        #Enroll cost
+        #enroll cost
         enrollCostLabel = tk.Label(self.root, text="Valor da matrícula")
         enrollCostLabel.place(x=20, y=95)
 

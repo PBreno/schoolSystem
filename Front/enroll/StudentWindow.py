@@ -1,16 +1,14 @@
 from tkinter import ttk
 import tkinter as tk
 
-class TeacherWindow():
+class StudentWindow():
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("Cadastro Professor")
-        self.root.geometry("700x400")
+        self.root.title("Cadastro Aluno")
+        self.root.geometry("750x350")
         self.root.resizable(True, True)
 
-
-
-    def teacherWindow(self):
+    def studentWindow(self):
 
         state = list()
         state.append("AC")
@@ -136,9 +134,9 @@ class TeacherWindow():
         backButton = tk.Button(self.root, text="Voltar")
         backButton.place(x=330, y=320, width=100, height=25)
 
-
         self.root.mainloop()
 
+
 if __name__ == "__main__":
-    teacherWindow = TeacherWindow()
-    teacherWindow.teacherWindow()
+    studentWindow = StudentWindow()
+    studentWindow.studentWindow()
