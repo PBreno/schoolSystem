@@ -1,17 +1,15 @@
-
 from tkinter import ttk
 import tkinter as tk
 
-class EnrollStudentWindow():
+
+class EnrollStudentWindow:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Matricula de Aluno")
         self.root.geometry("650x300")
         self.root.resizable(True, True)
 
-
-    def EnrollStudentWindow(self):
-
+    def enroll_student_window(self):
         courselabel = tk.Label(self.root, text="Curso")
         courselabel.place(x=30, y=30)
 
@@ -43,8 +41,3 @@ class EnrollStudentWindow():
         backButton.place(x=270, y=270, width=100, height=25)
 
         self.root.mainloop()
-        #self.root.quit()
-
-if __name__ == "__main__":
-    enroll = EnrollStudentWindow()
-    enroll.EnrollStudentWindow()

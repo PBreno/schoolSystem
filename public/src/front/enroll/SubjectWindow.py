@@ -4,14 +4,13 @@ from tkinter import ttk
 
 class SubjectWindow:
     def __init__(self):
-        super().__init__()
+        self.__init__()
         self.root = tk.Tk()
         self.root.title("Cadastro de Disciplina")
         self.root.geometry("450x350")
         self.root.resizable(True, True)
 
-
-    def subjectWindow(self):
+    def subject_window(self):
 
         subjectLabel = tk.Label(self.root, text="Disicplina", font=("Times New Roman", 15))
         subjectLabel.place(x=20, y=60)
@@ -45,7 +44,3 @@ class SubjectWindow:
         backButton.bind("<Button-1>", lambda event: self)
 
         self.root.mainloop()
-
-# if __name__ == "__main__":
-#     subjectWindow = SubjectWindow()
-#     subjectWindow.subjectWindow()

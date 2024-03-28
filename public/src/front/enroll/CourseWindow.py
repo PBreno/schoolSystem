@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-from Front.PrincipalWindow import PrincipalWindow
+from front.PrincipalWindow import PrincipalWindow
 
 
 class CourseWindow:

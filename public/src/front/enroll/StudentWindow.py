@@ -1,15 +1,15 @@
 from tkinter import ttk
 import tkinter as tk
 
-class StudentWindow():
+
+class StudentWindow:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Cadastro Aluno")
         self.root.geometry("750x350")
         self.root.resizable(True, True)
 
-    def studentWindow(self):
-
+    def student_window(self):
         state = list()
         state.append("AC")
         state.append("AL")
@@ -60,7 +60,7 @@ class StudentWindow():
         genderLabel = tk.Label(self.root, text="Sexo")
         genderLabel.place(x=530, y=40)
 
-        radiovar =tk.BooleanVar(value=False)
+        radiovar = tk.BooleanVar(value=False)
 
         genderM_radio = tk.Radiobutton(self.root, text="M", value='M', variable=radiovar)
         genderM_radio.place(x=530, y=60)
@@ -80,7 +80,7 @@ class StudentWindow():
         emailEntry = tk.Entry()
         emailEntry.place(x=190, y=110, width=160, height=25)
 
-        cepLabel= tk.Label(self.root, text="CEP")
+        cepLabel = tk.Label(self.root, text="CEP")
         cepLabel.place(x=20, y=140)
 
         cepEntry = tk.Entry()
@@ -92,19 +92,19 @@ class StudentWindow():
         logradouroEntry = tk.Entry()
         logradouroEntry.place(x=190, y=160, width=160, height=25)
 
-        districtlabel= tk.Label(self.root, text="Bairro")
+        districtlabel = tk.Label(self.root, text="Bairro")
         districtlabel.place(x=20, y=190)
 
         districtEntry = tk.Entry()
         districtEntry.place(x=20, y=210, width=160, height=25)
 
-        citylabel= tk.Label(self.root, text="Cidade")
+        citylabel = tk.Label(self.root, text="Cidade")
         citylabel.place(x=190, y=190)
 
         cityEntry = tk.Entry()
         cityEntry.place(x=190, y=210, width=160, height=25)
 
-        statelabel= tk.Label(self.root, text="Estado")
+        statelabel = tk.Label(self.root, text="Estado")
         statelabel.place(x=360, y=190)
 
         statecbx = ttk.Combobox(self.root, values=state)
@@ -135,8 +135,3 @@ class StudentWindow():
         backButton.place(x=330, y=320, width=100, height=25)
 
         self.root.mainloop()
-
-
-if __name__ == "__main__":
-    studentWindow = StudentWindow()
-    studentWindow.studentWindow()

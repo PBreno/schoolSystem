@@ -1,9 +1,9 @@
 import sys
 from tkinter import ttk, messagebox
 import tkinter as tk
-from Front.PrincipalWindow import *
+from public.src.front.PrincipalWindow import *
 
-#Backup to be implemented
+
 class BackupWindows:
     def __init__(self):
         self.root = tk.Tk()
@@ -12,8 +12,7 @@ class BackupWindows:
         self.root.resizable(True, True)
 
     def backup_windows_confirmation(self):
-
-        msg= messagebox.askyesno("Backup", "Deseja fazer o backup das informações?")
+        msg = messagebox.askyesno("Backup", "Deseja fazer o backup das informações?")
         if not msg:
             self.root.destroy()
             sys.exit()
@@ -28,9 +27,5 @@ class BackupWindows:
 
         backButton = tk.Button(self.root, text="Cancelar")
         backButton.place(x=120, y=150, width=100, height=25)
-        #backButton.bind("<Button-1>", )                                                                    int(creditCostEntry.get())))
 
         self.root.mainloop()
-
-if __name__ == '__main__':
-    BackupWindows().backup_windows_confirmation()

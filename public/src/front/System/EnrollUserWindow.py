@@ -27,7 +27,7 @@ class EnrollUserWindow():
         if msg:
             print("Cancelling")
             self.root.destroy()
-            from Front.System.LoginWindow import LoginWindow
+            from front.System.LoginWindow import LoginWindow
             login_window = LoginWindow()
 
             tk.Toplevel(login_window.login())

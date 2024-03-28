@@ -1,7 +1,7 @@
 import tkinter as tk
 
 
-class PrincipalWindow():
+class PrincipalWindow:
     def __init__(self):
         super().__init__()
         self.root = tk.Tk()
@@ -10,7 +10,7 @@ class PrincipalWindow():
         self.root.resizable(True, True)
         ##self.root.attributes("-fullscreen", True)
 
-    def showMenu(self):
+    def show_menu(self):
         menu = tk.Menu(self.root)
 
         sistema = tk.Menu(menu, tearoff=0)
@@ -38,12 +38,7 @@ class PrincipalWindow():
 
         self.root.config(menu=menu)
 
-    def principalWindow(self):
-        self.showMenu()
+    def principal_window(self):
+        self.show_menu()
         self.root.mainloop()
-        self.root.quit()
 
-
-# if __name__ == "__main__":
-#     app = PrincipalWindow()
-#     app.principalWindow()
